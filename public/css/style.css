@@ -66,3 +66,9 @@ h4 {
 p {
     margin: 12px;
 }
+
+textarea {
+    height: 100px;
+    width: 300px;
+    margin: 8px;
+}

@@ -13,7 +13,7 @@
             <h2> <%= post.username %> </h2>
             <p> <%= post.content %> </p>
             <a class="post-btn" type="button" href="/posts/<%= post.id %>"> See Post </a>
-            <a class="post-btn" type="button"> Edit Post </a>
+            <a class="post-btn" type="button" href="/posts/<%= post.id %>/edit"> Edit Post </a>
         </div>
     <% } %>
     <a class="post-btn" type="button" href="/posts/new"> New Post </a>
