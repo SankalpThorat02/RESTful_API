@@ -27,7 +27,7 @@ h1 {
 }
 
 h2 {
-    margin-bottom: 12px;
+    margin: 12px;
 }
 
 .post-btn {
@@ -58,3 +58,11 @@ h2 {
     transform: translateY(0px);
 }
 
+h4 {
+    margin: 12px;
+    margin-top: 4px;
+}
+
+p {
+    margin: 12px;
+}

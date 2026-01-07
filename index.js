@@ -15,16 +15,19 @@ app.use(express.json());
 
 let posts = [
     {
+        id: "1a",
         username: "Sankalp",
         content: "Hello, It's my page"
     }, 
     {
+        id: "2b",
         username: "Random",
         content: "Happy new year"
     },
     {
-        username: "Random",
-        content: "Happy new year"
+        id: "3c",
+        username: "Soham",
+        content: "Hello Everyone"
     }
 ]
 
@@ -44,4 +47,10 @@ app.post('/posts', (req, res) => {
     let {username, content} = req.body;
     posts.push({username, content});
     res.redirect('/posts');
+})
+
+app.get('/posts/:id', (req, res) => {
+    const {id} = req.params;
+    let post = posts.find((p) => id === p.id);
+    res.render("post.ejs", {post});
 })
