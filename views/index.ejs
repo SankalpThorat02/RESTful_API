@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Social Circle</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Social Circle</h1>
+    <% for(post of posts) { %>
+        <div class="posts">
+            <h2> <%= post.username %> </h2>
+            <p> <%= post.content %> </p>
+        </div>
+    <% } %>
+    <a class="post-btn" type="button" href="/posts/new"> New Post </a>
+</body>
+<script src="/js/app.js"></script>
+</html>
