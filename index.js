@@ -3,6 +3,8 @@ const { userInfo } = require("os");
 const app = express();
 const port = 8080;
 
+const {v4: uuidv4} = require("uuid");
+
 const path = require("path");
 
 app.set("view engine", "ejs");
@@ -15,17 +17,17 @@ app.use(express.json());
 
 let posts = [
     {
-        id: "1a",
+        id: uuidv4(),
         username: "Sankalp",
         content: "Hello, It's my page"
     }, 
     {
-        id: "2b",
+        id: uuidv4(),
         username: "Random",
         content: "Happy new year"
     },
     {
-        id: "3c",
+        id: uuidv4(),
         username: "Soham",
         content: "Hello Everyone"
     }
@@ -45,7 +47,8 @@ app.get('/posts/new', (req, res) => {
 
 app.post('/posts', (req, res) => {
     let {username, content} = req.body;
-    posts.push({username, content});
+    let id = uuidv4();
+    posts.push({username, content, id});
     res.redirect('/posts');
 })
 
