@@ -75,3 +75,10 @@ app.patch('/posts/:id', (req, res) => {
     post.content = content;
     res.redirect('/posts');
 })
+
+app.delete('/posts/:id', (req, res) => {
+    let {id} = req.params;
+    let newPosts = posts.filter(p => p.id != id);
+    posts = newPosts;
+    res.redirect('/posts');
+})
