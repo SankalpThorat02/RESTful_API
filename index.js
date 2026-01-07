@@ -57,3 +57,12 @@ app.get('/posts/:id', (req, res) => {
     let post = posts.find((p) => id === p.id);
     res.render("post.ejs", {post});
 })
+
+app.patch('/posts/:id', (req, res) => {
+    let {id} = req.params;
+    let {content} = req.body;
+
+    let post = posts.find(p => id === p.id);
+    post.content = content;
+    res.redirect('/posts');
+})
